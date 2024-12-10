@@ -1,5 +1,3 @@
-export default book_information;
-
 const book_information = [
     {
         id: 1,
@@ -17,3 +15,5 @@ const book_information = [
         name: '编码'
     }
 ]
+
+export default book_information;

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>提交表单</title>
+</head>
+<body>
+    <h2>功能1:根据ID查询书名</h2>
+    <form action="/index.js" method="get">
+        <label for="book_id">书籍ID:</label>
+        <input type="text" id="book_id" name="book_id" required>
+    </form>
+    <input type="submit" value="查询">
+
+    <h2>功能2:根据ID更新书名</h2>
+    <form action="/index.js" method="post">
+        <label for="update_book_id">书籍ID:</label>
+        <input type="text" id="update_book_id" name="update_book_id" required>
+
+        <label for="update_book_name">更新书名为:</label>
+        <input type="text" id="update_book_name", name="update_book_name" required>
+    </form>
+    <input type="submit" value="更新">
+</body>
+</html>
