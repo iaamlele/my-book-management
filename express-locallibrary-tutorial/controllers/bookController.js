@@ -1,3 +1,4 @@
+import book_information from "../data/books";
 const asyncHandler = require("express-async-handler");
 
 // 显示所有的图书
