@@ -8,12 +8,16 @@ const book_controller = require("../controllers/bookController");
 // GET 获取图书编目主页
 router.get('/', book_controller.index);
 
-// GET 请求完整图书列表
-router.get("/books", book_controller.book_list);
+// GET 根据ID请求图书信息
+router.get("/bookquery", book_controller.book_query_get);
+
+// POST 根据ID请求图书信息
+router.post("/bookquery", book_controller.book_query_post);
 
 // GET 请求更新图书
-router.get("/book/:id/update", book_controller.book_update_get);
+router.get("/bookupdate", book_controller.book_update_get);
 
 // POST 请求更新图书
-router.post("/book/:id/update", book_controller.book_update_post);
+router.post("/bookupdate", book_controller.book_update_post);
 
+module.exports = router;
