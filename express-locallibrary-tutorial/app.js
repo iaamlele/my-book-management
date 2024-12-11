@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var catalogRouter = require('./routes/catalog');
 
 // 用导入的 express 模块来创建 app 对象，然后使用它来设置视图（模板）引擎
 var app = express();
@@ -21,12 +22,14 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-// 除了之前导入的第三方库之外，我们还使用 express.static 中间件将项目 /public 目录下所有静态文件托管至根目录
+// 除了之前导入的第三方库之外，还使用 express.static 中间件将项目 /public 目录下所有静态文件托管至根目录
 app.use(express.static(path.join(__dirname, 'public')));
 
 // 所有中间件都已设置完毕，现在把（之前导入的）路由处理器添加到请求处理链中。从而为网站的不同部分定义具体的路由
-app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/', indexRouter);
+app.use('/catalog', catalogRouter);
+app.use('/bookquery', catalogRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
